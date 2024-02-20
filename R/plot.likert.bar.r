@@ -144,18 +144,18 @@ likert.bar.plot <- function(l,
       p <- p + geom_text(data=lsum, y=ymin, aes(x=Group,
                                                 label=paste0(formatC(low, digits=digits, format = "f", drop0trailing=drop0trailing, zero.print=zero.print), '%'),
                                                 group=Item),
-                         size=text.size, hjust=1, color=text.color)
+                         size=text.size, hjust=10, color=text.color)
     }
     if(plot.percent.high) {
       p <- p + geom_text(data=lsum, aes(x=Group, y=100,
                                         label=paste0(formatC(high, digits=digits, format = "f", drop0trailing=drop0trailing, zero.print=zero.print), '%'),
-                                        group=Item), size=text.size, hjust=-.2, color=text.color)
+                                        group=Item), size=text.size, hjust=-.20, color=text.color)
     }
     if(plot.percent.neutral & l$nlevels %% 2 == 1 & include.center) {
       if(centered) {
         p <- p + geom_text(data=lsum, y=0, aes(x=Group, group=Item,
                                                label=paste0(formatC(neutral, digits=digits, format = "f", drop0trailing=drop0trailing, zero.print=zero.print), '%')),
-                           size=text.size, hjust=.5, color=text.color)
+                           size=text.size, hjust=.50, color=text.color)
       } else {
         lsum$y <- lsum$low + (lsum$neutral/2)
         p <- p + geom_text(data=lsum, aes(x=Group, y=y, group=Item,
