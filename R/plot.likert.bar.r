@@ -141,13 +141,13 @@ likert.bar.plot <- function(l,
     }
 
     if(plot.percent.low) {
-      p <- p + geom_text(data=lsum, y=ymin, aes(x=Group,
+      p <- p + geom_text(data=lsum, y=ymin+50, aes(x=Group,
                                                 label=paste0(formatC(low, digits=digits, format = "f", drop0trailing=drop0trailing, zero.print=zero.print), '%'),
                                                 group=Item),
                          size=text.size, hjust=10, color=text.color)
     }
     if(plot.percent.high) {
-      p <- p + geom_text(data=lsum, aes(x=Group, y=100,
+      p <- p + geom_text(data=lsum, aes(x=Group, y=100-50,
                                         label=paste0(formatC(high, digits=digits, format = "f", drop0trailing=drop0trailing, zero.print=zero.print), '%'),
                                         group=Item), size=text.size, hjust=-.20, color=text.color)
     }
